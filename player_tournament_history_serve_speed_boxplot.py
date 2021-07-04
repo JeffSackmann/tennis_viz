@@ -2,7 +2,8 @@
 import altair as alt
 import pandas as pd
 
-## path to repo with relevant data:
+## path to repo with relevant data
+## ( https://github.com/JeffSackmann/tennis_slam_pointbypoint )
 data_prefix = '../tennis_slam_pointbypoint/'
 
 player = 'Roger Federer'
