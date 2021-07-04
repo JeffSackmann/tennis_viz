@@ -9,7 +9,9 @@ If I end up adding much stuff here, I'll make more of an effort to organize it. 
 ## Contents
 
 **player_tournament_history_serve_speed_boxplot.py (2021-07-04)**
+
 *python/pandas/altair / data from tennis_slam_pointbypoint* 
+
 Compare a player's serve speeds at a single tournament from various years. The output example is Roger Federer's first serve speeds in the first three rounds at Wimbledon, 2014-21.
 
 
