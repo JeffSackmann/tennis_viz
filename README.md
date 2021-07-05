@@ -10,8 +10,15 @@ If I end up adding much stuff here, I'll make more of an effort to organize it. 
 
 **player_tournament_history_serve_speed_boxplot.py (2021-07-04)**
 
-*python/pandas/altair / data from tennis_slam_pointbypoint* 
+*python/pandas/altair, data from tennis_slam_pointbypoint* 
 
 Compare a player's serve speeds at a single tournament from various years. The output example is Roger Federer's first serve speeds in the first three rounds at Wimbledon, 2014-21.
+
+**elo_vs_surface_elo.py (2021-07-05)**
+
+*python/pandas/altair, data from the [Tennis Abstract site](http://tennisabstract.com/reports/wta_elo_ratings.html).* 
+
+Scatterplot of overall elo ratings vs surface-specific ratings. Output example is the last 16 women at Wimbledon in 2021, overall vs grass.
+
 
 
