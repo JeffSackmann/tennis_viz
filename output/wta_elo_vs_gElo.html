@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "circle", "size": 60}, "encoding": {"color": {"type": "quantitative", "field": "still_in", "legend": null}, "x": {"type": "quantitative", "axis": {"title": "Overall Elo"}, "field": "Elo", "scale": {"domain": [1300, 2350]}}, "y": {"type": "quantitative", "axis": {"title": "Grass-Only Elo"}, "field": "GrassRaw", "scale": {"domain": [1200, 1900]}}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"color": {"type": "quantitative", "field": "still_in", "legend": null}, "text": {"type": "nominal", "field": "label"}, "x": {"type": "quantitative", "axis": {"title": "Overall Elo"}, "field": "Elo", "scale": {"domain": [1300, 2350]}}, "y": {"type": "quantitative", "axis": {"title": "Grass-Only Elo"}, "field": "GrassRaw", "scale": {"domain": [1200, 1900]}}}}], "data": {"name": "data-7d53d24e8fcd005e175ac51cab68d461"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-7d53d24e8fcd005e175ac51cab68d461": [{"Player": "Ajla Tomljanovic", "Elo": 1783.992351, "GrassRaw": 1546.240916, "still_in": 1, "label": "Ajla Tomljanovic"}, {"Player": "Angelique Kerber", "Elo": 1896.167703, "GrassRaw": 1825.758818, "still_in": 1, "label": "Angelique Kerber"}, {"Player": "Aryna Sabalenka", "Elo": 2066.4837820000002, "GrassRaw": 1568.824043, "still_in": 1, "label": "Aryna Sabalenka"}, {"Player": "Ashleigh Barty", "Elo": 2190.960736, "GrassRaw": 1780.5167940000001, "still_in": 1, "label": "Ashleigh Barty"}, {"Player": "Barbora Krejcikova", "Elo": 1987.193044, "GrassRaw": 1254.281571, "still_in": 0, "label": ""}, {"Player": "Cori Gauff", "Elo": 2004.868125, "GrassRaw": 1620.878177, "still_in": 0, "label": ""}, {"Player": "Elena Rybakina", "Elo": 1916.112634, "GrassRaw": 1641.8555529999999, "still_in": 0, "label": ""}, {"Player": "Iga Swiatek", "Elo": 2048.123873, "GrassRaw": 1473.541448, "still_in": 0, "label": ""}, {"Player": "Karolina Muchova", "Elo": 1888.857282, "GrassRaw": 1462.103141, "still_in": 1, "label": "Karolina Muchova"}, {"Player": "Karolina Pliskova", "Elo": 1953.4338510000002, "GrassRaw": 1701.92048, "still_in": 1, "label": "Karolina Pliskova"}, {"Player": "Ludmilla Samsonova", "Elo": 1844.150938, "GrassRaw": 1701.6009940000001, "still_in": 0, "label": ""}, {"Player": "Madison Keys", "Elo": 1911.901564, "GrassRaw": 1631.594122, "still_in": 0, "label": ""}, {"Player": "Ons Jabeur", "Elo": 1969.024914, "GrassRaw": 1718.235583, "still_in": 1, "label": "Ons Jabeur"}, {"Player": "Paula Badosa", "Elo": 1896.3999239999998, "GrassRaw": 1436.4186439999999, "still_in": 0, "label": ""}, {"Player": "Viktorija Golubic", "Elo": 1773.914471, "GrassRaw": 1507.053275, "still_in": 1, "label": "Viktorija Golubic"}, {"Player": "Emma Raducanu", "Elo": 1334.309596, "GrassRaw": 1310.6164099999999, "still_in": 1, "label": "Emma Raducanu"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
