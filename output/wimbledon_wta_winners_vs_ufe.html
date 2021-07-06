@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": {"type": "circle", "size": 60}, "encoding": {"color": {"type": "quantitative", "field": "still_in", "legend": null}, "x": {"type": "quantitative", "axis": {"format": "%", "title": "Unforced Error Rate (ufe per point)"}, "field": "Error Perc", "scale": {"domain": [0.1, 0.24]}}, "y": {"type": "quantitative", "axis": {"format": "%", "title": "Winner Rate (winners per point)"}, "field": "Winner Perc", "scale": {"domain": [0.05, 0.24]}}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 7}, "encoding": {"color": {"type": "quantitative", "field": "still_in", "legend": null}, "text": {"type": "nominal", "field": "label"}, "x": {"type": "quantitative", "axis": {"format": "%", "title": "Unforced Error Rate (ufe per point)"}, "field": "Error Perc", "scale": {"domain": [0.1, 0.24]}}, "y": {"type": "quantitative", "axis": {"format": "%", "title": "Winner Rate (winners per point)"}, "field": "Winner Perc", "scale": {"domain": [0.05, 0.24]}}}}], "data": {"name": "data-f8555f4c4814b53a84bc5535188e3e7b"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-f8555f4c4814b53a84bc5535188e3e7b": [{"Player": "Ashleigh Barty", "Winner Perc": 0.1986644407345576, "Error Perc": 0.19365609348914858, "still_in": 1.0, "label": "Barty"}, {"Player": "Anastasija Sevastova", "Winner Perc": 0.132, "Error Perc": 0.152, "still_in": 0.5, "label": ""}, {"Player": "Sorana Cirstea", "Winner Perc": 0.14583333333333334, "Error Perc": 0.125, "still_in": 0.5, "label": ""}, {"Player": "Jelena Ostapenko", "Winner Perc": 0.19282511210762332, "Error Perc": 0.19730941704035873, "still_in": 0.5, "label": ""}, {"Player": "Magda Linette", "Winner Perc": 0.2019607843137255, "Error Perc": 0.15490196078431373, "still_in": 0.5, "label": ""}, {"Player": "Karolina Muchova", "Winner Perc": 0.15384615384615385, "Error Perc": 0.13504273504273503, "still_in": 1.0, "label": "Muchova"}, {"Player": "Kaja Juvan", "Winner Perc": 0.15211267605633802, "Error Perc": 0.14647887323943662, "still_in": 0.5, "label": ""}, {"Player": "Angelique Kerber", "Winner Perc": 0.17288135593220338, "Error Perc": 0.14576271186440679, "still_in": 1.0, "label": "Kerber"}, {"Player": "Karolina Pliskova", "Winner Perc": 0.19591836734693877, "Error Perc": 0.17551020408163265, "still_in": 1.0, "label": "Pliskova"}, {"Player": "Liudmila Samsonova", "Winner Perc": 0.17744610281923714, "Error Perc": 0.2222222222222222, "still_in": 0.5, "label": ""}, {"Player": "Elise Mertens", "Winner Perc": 0.14906832298136646, "Error Perc": 0.14906832298136646, "still_in": 0.5, "label": ""}, {"Player": "Viktorija Golubic", "Winner Perc": 0.15702479338842976, "Error Perc": 0.11239669421487604, "still_in": 1.0, "label": "Golubic"}, {"Player": "Iga Swiatek", "Winner Perc": 0.14757709251101322, "Error Perc": 0.14317180616740088, "still_in": 0.5, "label": ""}, {"Player": "Ons Jabeur", "Winner Perc": 0.19666666666666666, "Error Perc": 0.135, "still_in": 1.0, "label": "Jabeur"}, {"Player": "Shelby Rogers", "Winner Perc": 0.11764705882352941, "Error Perc": 0.11990950226244344, "still_in": 0.5, "label": ""}, {"Player": "Maria Camila Osorio Serrano", "Winner Perc": 0.07828282828282829, "Error Perc": 0.1414141414141414, "still_in": 0.5, "label": ""}, {"Player": "Katerina Siniakova", "Winner Perc": 0.15763546798029557, "Error Perc": 0.1330049261083744, "still_in": 0.5, "label": ""}, {"Player": "Barbora Krejcikova", "Winner Perc": 0.17863105175292154, "Error Perc": 0.2003338898163606, "still_in": 0.5, "label": ""}, {"Player": "Emma Raducanu", "Winner Perc": 0.13320825515947468, "Error Perc": 0.15384615384615385, "still_in": 0.5, "label": ""}, {"Player": "Ajla Tomljanovic", "Winner Perc": 0.10260586319218241, "Error Perc": 0.13192182410423453, "still_in": 1.0, "label": "Tomljanovic"}, {"Player": "Paula Badosa", "Winner Perc": 0.15552099533437014, "Error Perc": 0.16018662519440124, "still_in": 0.5, "label": ""}, {"Player": "Anastasia Pavlyuchenkova", "Winner Perc": 0.17101449275362318, "Error Perc": 0.1681159420289855, "still_in": 0.5, "label": ""}, {"Player": "Coco Gauff", "Winner Perc": 0.17660044150110377, "Error Perc": 0.16556291390728478, "still_in": 0.5, "label": ""}, {"Player": "Aliaksandra Sasnovich", "Winner Perc": 0.20634920634920634, "Error Perc": 0.18412698412698414, "still_in": 0.5, "label": ""}, {"Player": "Tereza Martincova", "Winner Perc": 0.09504950495049505, "Error Perc": 0.1306930693069307, "still_in": 0.5, "label": ""}, {"Player": "Sloane Stephens", "Winner Perc": 0.10623556581986143, "Error Perc": 0.13625866050808313, "still_in": 0.5, "label": ""}, {"Player": "Madison Keys", "Winner Perc": 0.1873767258382643, "Error Perc": 0.17159763313609466, "still_in": 0.5, "label": ""}, {"Player": "Madison Brengle", "Winner Perc": 0.06578947368421052, "Error Perc": 0.11403508771929824, "still_in": 0.5, "label": ""}, {"Player": "Irina Camelia Begu", "Winner Perc": 0.16166281755196305, "Error Perc": 0.17321016166281755, "still_in": 0.5, "label": ""}, {"Player": "Garbine Muguruza", "Winner Perc": 0.16040100250626566, "Error Perc": 0.12531328320802004, "still_in": 0.5, "label": ""}, {"Player": "Elena Rybakina", "Winner Perc": 0.18415841584158416, "Error Perc": 0.16831683168316833, "still_in": 0.5, "label": ""}, {"Player": "Aryna Sabalenka", "Winner Perc": 0.22184300341296928, "Error Perc": 0.20819112627986347, "still_in": 1.0, "label": "Sabalenka"}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
