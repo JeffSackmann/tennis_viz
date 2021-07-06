@@ -69,7 +69,9 @@ points = alt.Chart(df).mark_circle(size=60).encode(
           axis=alt.Axis(format='%',
                         title='Winner Rate (winners per point)')
           ),
-    color=alt.Color('still_in:Q', legend=None),
+    ## 'N' treats still_in as nominal, not a quantitative scale, so just picks
+    ## two different colors
+    color=alt.Color('still_in:N', legend=None),
 )
 
 text = points.mark_text(
@@ -79,8 +81,14 @@ text = points.mark_text(
 ).encode(
     text='label'
 )
-    
-combined = points + text
+
+## strokeDash gives dotted line
+reg_line = points.transform_regression('Error Perc', 'Winner Perc').mark_line(strokeDash=[1,1])
+
+## the 'category' list specifies colors for the two options of 'still_in'
+combined = (points + text + reg_line).configure_range(
+    category=['#00008B', '#B0E0E6'] ##{'scheme': 'dark2'}
+)
 combined.save('output/wimbledon_wta_winners_vs_ufe.html')
 
 
