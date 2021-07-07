@@ -45,14 +45,15 @@ for y in range(2008,2022):
         player_slams.append(row)                                                             
     
 ## add 2021 wimbledon, not yet in the tennis_atp data
-player_slams.append(['Wimbledon', 20210628, 1.975])
+player_slams.append(['Wimbledon', 20210628, 1.975, 0])
 
 ## sort slams ascending by date
 player_slams = sorted(player_slams, key=lambda x: x[1])
     
-df = pd.DataFrame(player_slams, columns=['Tourney', 'Date', 'DR', 'Won Tourney'])
+df = pd.DataFrame(player_slams, columns=['Tourney', 'Date', 'DR', 'Title'])
 
 df.astype({'DR': 'float',
+           'Title': 'int'
                 }).dtypes
 
 slam_abvs = {'Wimbledon': 'Wimb',
@@ -66,15 +67,24 @@ df['FullName'] = df.apply(lambda row: str(row['Date'])[:4] + ' ' + slam_abvs[row
 ## store list in *date* order for the chart to use:
 x_sort = df['FullName'].tolist()
 
+## subset of the data with only tournaments where he won the title, for second layer
+titles = df.loc[df['Title'] == 1]
+
+## line chart with all tournaments
 line = alt.Chart(df).mark_line(point=True).encode(
     alt.X('FullName',
           sort=x_sort,
           axis=alt.Axis(title='Tournament (first four rounds)')),
     alt.Y('DR',
           axis=alt.Axis(title='Dominance Ratio'),
-          scale=alt.Scale(domain=(1.0,2.2)))
-).configure_point(
-    size=50
+          scale=alt.Scale(domain=(1.0,2.2))),
 )
     
-line.save('output/djokovic_slam_dr.html')
+## mark larger, different-colored points for tournaments that he won
+points = alt.Chart(titles).mark_point(filled=True, size=200, color='orange').encode(
+    alt.X('FullName',
+          sort=x_sort),
+    alt.Y('DR')
+)
+    
+(line + points).save('output/djokovic_slam_dr.html')
