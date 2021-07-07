@@ -26,4 +26,8 @@ Scatterplot of overall elo ratings vs surface-specific ratings. Output example i
 
 Plot winner rate (winners per point) against unforced error rate for all players who reached a certain point in a tournament. Output example is the last 8 women at Wimbledon (with the rest of the last 32 shown in the background).
 
+**player_slam_dom_ratio.py (2021-07-07)**
 
+*python/pandas/altair, data from tennis_atp*
+
+Show a player's dominance ratio (RPW / opponents' RPW) through the first four rounds at every slam. Output example is Novak Djokovic back to 2008.
