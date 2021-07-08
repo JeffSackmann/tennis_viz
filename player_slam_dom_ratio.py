@@ -7,10 +7,10 @@ pd.options.mode.chained_assignment = None  # default='warn'
 ## ( https://github.com/JeffSackmann/tennis_atp )
 data_prefix = '../tennis_atp/'
 
-player = 'Novak Djokovic'
+player = 'Roger Federer'
 
 player_slams = []
-for y in range(2008,2022):
+for y in range(2003,2022):
     ## load matches and reduce to the target player, in first four rounds at slams
     matches = pd.read_csv(data_prefix + 'atp_matches_' + str(y) + '.csv')
     pmatches =  matches.loc[(matches['winner_name'] == player) | (matches['loser_name'] == player)]
@@ -45,7 +45,7 @@ for y in range(2008,2022):
         player_slams.append(row)                                                             
     
 ## add 2021 wimbledon, not yet in the tennis_atp data
-player_slams.append(['Wimbledon', 20210628, 1.975, 0])
+player_slams.append(['Wimbledon', 20210628, 1.38, 0])
 
 ## sort slams ascending by date
 player_slams = sorted(player_slams, key=lambda x: x[1])
@@ -77,7 +77,7 @@ line = alt.Chart(df).mark_line(point=True).encode(
           axis=alt.Axis(title='Tournament (first four rounds)')),
     alt.Y('DR',
           axis=alt.Axis(title='Dominance Ratio'),
-          scale=alt.Scale(domain=(1.0,2.2))),
+          scale=alt.Scale(domain=(0.8,2.5))),
 )
     
 ## mark larger, different-colored points for tournaments that he won
@@ -87,4 +87,4 @@ points = alt.Chart(titles).mark_point(filled=True, size=200, color='orange').enc
     alt.Y('DR')
 )
     
-(line + points).save('output/djokovic_slam_dr.html')
+(line + points).save('output/federer_slam_dr.html')
