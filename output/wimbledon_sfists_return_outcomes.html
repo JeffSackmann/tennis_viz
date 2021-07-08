@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-efbefac8ce02beff8bf00a04886e6510"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "Outcome", "sort": ["Double Faults", "Return Winners", "Return Longer", "Serve Longer", "Serve + 1", "Serve Winners"]}, "order": {"type": "quantitative", "field": "Sort", "sort": "ascending"}, "x": {"type": "quantitative", "aggregate": "sum", "axis": {"format": "%", "title": "Percentage of return points"}, "field": "Percentage", "scale": {"domain": [0, 1]}}, "y": {"type": "nominal", "field": "Player"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-efbefac8ce02beff8bf00a04886e6510": [{"Player": "Ashleigh Barty", "Outcome": "Double Faults", "Percentage": 0.03812316715542522, "Sort": 1}, {"Player": "Ashleigh Barty", "Outcome": "Return Winners", "Percentage": 0.12609970674486803, "Sort": 2}, {"Player": "Ashleigh Barty", "Outcome": "Return Longer", "Percentage": 0.3255131964809384, "Sort": 3}, {"Player": "Ashleigh Barty", "Outcome": "Serve Longer", "Percentage": 0.20234604105571846, "Sort": 4}, {"Player": "Ashleigh Barty", "Outcome": "Serve + 1", "Percentage": 0.17595307917888564, "Sort": 5}, {"Player": "Ashleigh Barty", "Outcome": "Serve Winners", "Percentage": 0.13196480938416422, "Sort": 6}, {"Player": "Karolina Pliskova", "Outcome": "Double Faults", "Percentage": 0.0625, "Sort": 1}, {"Player": "Karolina Pliskova", "Outcome": "Return Winners", "Percentage": 0.21710526315789475, "Sort": 2}, {"Player": "Karolina Pliskova", "Outcome": "Return Longer", "Percentage": 0.1875, "Sort": 3}, {"Player": "Karolina Pliskova", "Outcome": "Serve Longer", "Percentage": 0.11842105263157894, "Sort": 4}, {"Player": "Karolina Pliskova", "Outcome": "Serve + 1", "Percentage": 0.2138157894736842, "Sort": 5}, {"Player": "Karolina Pliskova", "Outcome": "Serve Winners", "Percentage": 0.20065789473684212, "Sort": 6}, {"Player": "Aryna Sabalenka", "Outcome": "Double Faults", "Percentage": 0.047752808988764044, "Sort": 1}, {"Player": "Aryna Sabalenka", "Outcome": "Return Winners", "Percentage": 0.21348314606741572, "Sort": 2}, {"Player": "Aryna Sabalenka", "Outcome": "Return Longer", "Percentage": 0.22752808988764045, "Sort": 3}, {"Player": "Aryna Sabalenka", "Outcome": "Serve Longer", "Percentage": 0.1151685393258427, "Sort": 4}, {"Player": "Aryna Sabalenka", "Outcome": "Serve + 1", "Percentage": 0.1348314606741573, "Sort": 5}, {"Player": "Aryna Sabalenka", "Outcome": "Serve Winners", "Percentage": 0.2612359550561798, "Sort": 6}, {"Player": "Angelique Kerber", "Outcome": "Double Faults", "Percentage": 0.05027932960893855, "Sort": 1}, {"Player": "Angelique Kerber", "Outcome": "Return Winners", "Percentage": 0.11173184357541899, "Sort": 2}, {"Player": "Angelique Kerber", "Outcome": "Return Longer", "Percentage": 0.32122905027932963, "Sort": 3}, {"Player": "Angelique Kerber", "Outcome": "Serve Longer", "Percentage": 0.24581005586592178, "Sort": 4}, {"Player": "Angelique Kerber", "Outcome": "Serve + 1", "Percentage": 0.12290502793296089, "Sort": 5}, {"Player": "Angelique Kerber", "Outcome": "Serve Winners", "Percentage": 0.14804469273743018, "Sort": 6}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
