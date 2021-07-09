@@ -31,3 +31,15 @@ Plot winner rate (winners per point) against unforced error rate for all players
 *python/pandas/altair, data from tennis_atp*
 
 Show a player's dominance ratio (RPW / opponents' RPW) through the first four rounds at every slam. Output example is Novak Djokovic back to 2008.
+
+**players_return_point_outcomes.py (2021-07-08)**
+
+*python/pandas/altair, data from tennis_slam_pointbypoint*
+
+Stacked bar chart showing different outcomes of return points for several players. Output example is the four women's semifinalists at Wimbledon, using data from the first five rounds.
+
+**players_weekly_elo.py (2021-07-09)**
+
+*python/pandas/altair, data provided in this repo*
+
+Multi-series line chart showing the Elo rating progression of several players. Output example is three of the four Wimbledon men's semi-finalists, with ratings back to the beginning of 2018.
