@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"name": "data-eaf98394c1ac87acfb3ecb99efe9d93f"}, "mark": "bar", "encoding": {"color": {"type": "nominal", "field": "Player", "sort": ["Ashleigh Barty", "Karolina Pliskova", "Average"]}, "column": {"type": "nominal", "field": "Serve", "header": {"title": ""}, "sort": ["All Serves", "1st Serves", "2nd Serves"]}, "x": {"type": "nominal", "field": "Player", "sort": ["Ashleigh Barty", "Karolina Pliskova", "Average"]}, "y": {"type": "quantitative", "axis": {"format": "%"}, "field": "Returns in play"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json", "datasets": {"data-eaf98394c1ac87acfb3ecb99efe9d93f": [{"Player": "Ashleigh Barty", "Serve": "All Serves", "Returns in play": 0.8618925831202046}, {"Player": "Ashleigh Barty", "Serve": "1st Serves", "Returns in play": 0.8367346938775511}, {"Player": "Ashleigh Barty", "Serve": "2nd Serves", "Returns in play": 0.9041095890410958}, {"Player": "Karolina Pliskova", "Serve": "All Serves", "Returns in play": 0.7322834645669292}, {"Player": "Karolina Pliskova", "Serve": "1st Serves", "Returns in play": 0.708}, {"Player": "Karolina Pliskova", "Serve": "2nd Serves", "Returns in play": 0.7786259541984732}, {"Player": "Average", "Serve": "All Serves", "Returns in play": 0.7376682968061341}, {"Player": "Average", "Serve": "1st Serves", "Returns in play": 0.6970489353754202}, {"Player": "Average", "Serve": "2nd Serves", "Returns in play": 0.8119555935098207}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
