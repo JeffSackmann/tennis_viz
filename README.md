@@ -43,3 +43,15 @@ Stacked bar chart showing different outcomes of return points for several player
 *python/pandas/altair, data provided in this repo*
 
 Multi-series line chart showing the Elo rating progression of several players. Output example is three of the four Wimbledon men's semi-finalists, with ratings back to the beginning of 2018.
+
+**players_returns_in_play.py (2021-07-10)**
+
+*python/pandas/altair, data from tennis_slam_pointbypoint*
+
+Grouped bar charts showing returns in play for two different players compared to the rest of the field. Output example is Barty and Pliskova vs the field through the first six rounds of Wimbledon 2021.
+
+**player_slam_opponent_ranks.py (2021-07-11)**
+
+*python/pandas/altair, data from tennis_atp*
+
+Interactive scatterplot showing all of a player's grand slam matches, differentiating between wins and losses, as well as finals and other matches. Also includes a bar chart showing won-loss record, which can be adjusted by highlighting a field of the scatterplot. Output example is Novak Djokovic's career, and a the interactive version can be explored [here](https://tennisabstract.com/dataviz/Novak_Djokovic_Grand_Slam_Dataviz.html).
